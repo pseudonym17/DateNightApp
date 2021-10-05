@@ -1,9 +1,13 @@
 package com.example.datenightapp
 
 import android.content.Intent
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.RelativeLayout
+import android.widget.Toast
 
 class SwipePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,6 +15,24 @@ class SwipePage : AppCompatActivity() {
         setContentView(R.layout.activity_swipe_page)
 
         supportActionBar?.hide()
+
+        val swiper = findViewById<ImageView>(R.id.swipeImg)
+
+
+        swiper.setOnTouchListener(object : OnSwipeTouchListener(this@SwipePage) {
+            override fun onSwipeRight() {
+
+                Toast.makeText(this@SwipePage, "Swipe Right gesture detected", Toast.LENGTH_SHORT)
+                    .show();
+
+            }
+
+            override fun onSwipeLeft() {
+                Toast.makeText(this@SwipePage, "Swipe Left gesture detected", Toast.LENGTH_SHORT)
+                    .show();
+
+            }
+        })
 
         val button = findViewById<Button>(R.id.homeButton)
         button.setOnClickListener{
