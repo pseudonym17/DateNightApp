@@ -14,6 +14,7 @@ class HomePage : AppCompatActivity() {
 
         val button1 = findViewById<Button>(R.id.home_to_swipe_button)
         val button2 = findViewById<Button>(R.id.home_to_saved)
+        val button3 = findViewById<Button>(R.id.matchbtn)
 
         button1.setOnClickListener{
             val intent = Intent(this, SwipePage::class.java)
@@ -22,6 +23,11 @@ class HomePage : AppCompatActivity() {
 
         button2.setOnClickListener{
             val intent = Intent(this, SavedActivitiesPage::class.java)
+            startActivity(intent)
+        }
+
+        button3.setOnClickListener{
+            val intent = Intent(this, MatchesPage::class.java)
             startActivity(intent)
         }
     }
