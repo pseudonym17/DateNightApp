@@ -36,7 +36,12 @@ class SwipePage : AppCompatActivity() {
         })
 
         val button = findViewById<Button>(R.id.homeButton)
+        val logo = findViewById<ImageView>(R.id.logo)
         button.setOnClickListener{
+            val intent = Intent(this, HomePage::class.java)
+            startActivity(intent)
+        }
+        logo.setOnClickListener{
             val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
