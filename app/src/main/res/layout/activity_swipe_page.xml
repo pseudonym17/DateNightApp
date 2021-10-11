@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1C2D88"
-    tools:context=".SwipePage">
+    android:visibility="visible"
+    tools:context=".SwipePage"
+    tools:visibility="visible">
 
     <ImageView
         android:id="@+id/logo"
@@ -51,12 +53,14 @@
         android:layout_width="198dp"
         android:layout_height="197dp"
         android:layout_marginTop="24dp"
-        android:background="#00020E"
+        android:background="#0500020E"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:srcCompat="@drawable/logo"
+        app:srcCompat="@drawable/rockwall"
+        tools:srcCompat="@drawable/rockwall"
         tools:visibility="visible" />
 
     <TextView
@@ -104,5 +108,19 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/location" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="340dp"
+        android:layout_height="205dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="296dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rockwall" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
