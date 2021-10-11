@@ -30,7 +30,6 @@ public abstract class OnSwipeTouchListener() :View.OnTouchListener{
         }
 
         override fun onSingleTapUp(e: MotionEvent?): Boolean {
-            //onSingleTapUp(e)
             return true
         }
 

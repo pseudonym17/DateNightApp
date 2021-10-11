@@ -32,6 +32,7 @@ class SwipePage : AppCompatActivity() {
                     .show();
 
             }
+
         })
 
         val button = findViewById<Button>(R.id.homeButton)
