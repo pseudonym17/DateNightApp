@@ -33,52 +33,42 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/price"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:fontFamily="cursive"
-        android:text="Feature In Progress"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintVertical_bias="0.428" />
 
     <ImageView
         android:id="@+id/swipeImg"
         android:layout_width="198dp"
         android:layout_height="197dp"
-        android:layout_marginTop="24dp"
-        android:background="#0500020E"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/img"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/rockwall"
-        tools:srcCompat="@drawable/rockwall"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
         tools:visibility="visible" />
 
     <TextView
         android:id="@+id/activityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
         android:text="Activity Title"
         android:textColor="#FFFFFF"
+        android:fontFamily="cursive"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/swipeImg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/swipeImg" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/activityDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="236dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:text="Activity Description"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,19 +98,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/location" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="340dp"
-        android:layout_height="205dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="230dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="296dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rockwall" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
