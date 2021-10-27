@@ -15,8 +15,7 @@ class loginPage : AppCompatActivity() {
         val button = findViewById<Button>(R.id.loginbtn)
 
         button.setOnClickListener{
-            val intent = Intent(this, HomePage:: class.java)
-            startActivity(intent)
+//            write the firebase login function here
         }
     }
 }
