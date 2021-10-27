@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "729450249526",
+    "project_id": "date-night-app-94e90",
+    "storage_bucket": "date-night-app-94e90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729450249526:android:6f9de9454794b9b90bc797",
+        "android_client_info": {
+          "package_name": "com.example.datenightapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729450249526-fdvafcrhhc0t820j2remkt2qtdn9nlpg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFUM7tgROmAFiOBUs3dDXcaIug3Ms6vIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729450249526-fdvafcrhhc0t820j2remkt2qtdn9nlpg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
