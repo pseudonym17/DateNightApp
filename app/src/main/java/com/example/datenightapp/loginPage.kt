@@ -30,7 +30,7 @@ class loginPage : AppCompatActivity() {
                 .get()
                 .addOnSuccessListener { result ->
                     for (document in result) {
-                        Toast.makeText(this, "${document.id} => ${document.data}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "${document.id} => ${document.data["password"]}", Toast.LENGTH_SHORT).show()
                     }
                 }
                 .addOnFailureListener { exception ->
