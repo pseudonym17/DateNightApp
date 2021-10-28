@@ -38,7 +38,6 @@ class SignUpPage : AppCompatActivity() {
             user["password"] = password
 
 
-            println("Here")
 
             db.collection("users").document(user_name)
                 .set(user)
