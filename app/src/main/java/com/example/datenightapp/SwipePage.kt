@@ -11,7 +11,6 @@ class SwipePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_swipe_page)
 
-
         supportActionBar?.hide()
 
         val swipeImg = findViewById<ImageView>(R.id.swipeImg)
@@ -34,6 +33,9 @@ class SwipePage : AppCompatActivity() {
             R.drawable.hickory,
             R.drawable.rigby_lake
         )
+
+
+
         val activitiesArr = arrayOf(
             arrayOf("img", "Games at the MC", "Board and table games including: pool, foosball, airhockey, and more", "WHERE: Manwarring Center at BYU-I", "PRICE: Free"),
             arrayOf("img", "Rock Climbing", "Rock climbing and bouldering", "WHERE: Address", "PRICE: ?"),
