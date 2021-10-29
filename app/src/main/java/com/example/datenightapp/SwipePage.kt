@@ -5,6 +5,7 @@ import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SwipePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,8 +20,34 @@ class SwipePage : AppCompatActivity() {
         val description = findViewById<TextView>(R.id.activityDescription)
         val location = findViewById<TextView>(R.id.location)
         val price = findViewById<TextView>(R.id.price)
+
+        val database = FirebaseFirestore.getInstance()
+
+        //val activity : Activity(title, description, location, price)
+        var activitylist : MutableList<Activity> = ArrayList()
+        var indexCap = 0
         var index = 0
-        // On create, query the db fill array of the activities.
+        database.collection("activities")
+            .get()
+            .addOnSuccessListener { documents ->
+                println("Starting to retrieve docs")
+                for (document in documents) {
+                    println("${document.id} => ${document.data["name"]}")
+                    val name = document.data["name"].toString()
+                    val description = document.data["description"].toString()
+                    val address = document.data["address"].toString()
+                    val price = document.data["price"].toString()
+                    val activity = Activity(name, description, address, price)
+                    activitylist.add(activity)
+                    showFirstActivity(activitylist)
+                }
+                indexCap = activitylist.size - 2
+            }
+            .addOnFailureListener { exception ->
+                println("Error getting documents: ")
+            }
+
+
         val pictureFiles = arrayOf(
             R.drawable.img,
             R.drawable.rockclimbing,
@@ -48,14 +75,7 @@ class SwipePage : AppCompatActivity() {
             arrayOf("img", "Rigby Lake", "Swim, sunbath, camp, kayak, and more", "WHERE: Jefferson County Lake", "PRICE: $6"),
         )
 
-        var indexCap = activitiesArr.size - 2
-        
         swipeImg.setBackgroundResource(pictureFiles[index])
-        title.setText(activitiesArr[index][1])
-        description.setText(activitiesArr[index][2])
-        location.setText(activitiesArr[index][3])
-        price.setText(activitiesArr[index][4])
-
 
         swipeImg.setOnTouchListener(object : OnSwipeTouchListener(this@SwipePage) {
             override fun onSwipeRight() {
@@ -67,10 +87,7 @@ class SwipePage : AppCompatActivity() {
                 else
                     index = 0
                 swipeImg.setBackgroundResource(pictureFiles[index])
-                title.setText(activitiesArr[index][1])
-                description.setText(activitiesArr[index][2])
-                location.setText(activitiesArr[index][3])
-                price.setText(activitiesArr[index][4])
+                nextActivity(activitylist, index)
             }
 
             override fun onSwipeLeft() {
@@ -80,12 +97,7 @@ class SwipePage : AppCompatActivity() {
                     index++
                 else
                     index = 0
-                swipeImg.setBackgroundResource(pictureFiles[index])
-                title.setText(activitiesArr[index][1])
-                description.setText(activitiesArr[index][2])
-                location.setText(activitiesArr[index][3])
-                price.setText(activitiesArr[index][4])
-
+                nextActivity(activitylist, index)
             }
 
         })
@@ -100,5 +112,28 @@ class SwipePage : AppCompatActivity() {
             val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
+    }
+    private fun showFirstActivity(activitylist : MutableList<Activity>) {
+        val title = findViewById<TextView>(R.id.activityTitle)
+        val description = findViewById<TextView>(R.id.activityDescription)
+        val location = findViewById<TextView>(R.id.location)
+        val price = findViewById<TextView>(R.id.price)
+
+        title.setText(activitylist[0].name)
+        description.setText(activitylist[0].description)
+        location.setText(activitylist[0].address)
+        price.setText(activitylist[0].price)
+    }
+
+    private fun nextActivity(activitylist: MutableList<Activity>, index: Int) {
+        val title = findViewById<TextView>(R.id.activityTitle)
+        val description = findViewById<TextView>(R.id.activityDescription)
+        val location = findViewById<TextView>(R.id.location)
+        val price = findViewById<TextView>(R.id.price)
+
+        title.setText(activitylist[index].name)
+        description.setText(activitylist[index].description)
+        location.setText(activitylist[index].address)
+        price.setText(activitylist[index].price)
     }
 }
