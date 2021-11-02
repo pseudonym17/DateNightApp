@@ -19,7 +19,6 @@
         app:layout_constraintVertical_bias="0.046"
         app:srcCompat="@drawable/logo" />
 
-
     <EditText
         android:id="@+id/firstname"
         android:layout_width="wrap_content"
@@ -92,8 +91,8 @@
         android:backgroundTint="#0C133C"
         android:text="Sign-up"
         android:textSize="16sp"
-        app:layout_constraintWidth=".8"
-        app:layout_constraintVertical_bias=".7"
+        app:layout_constraintWidth="0.8"
+        app:layout_constraintVertical_bias="0.7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
