@@ -37,17 +37,14 @@ class SignUpPage : AppCompatActivity() {
             user["username"] = user_name
             user["password"] = password
 
-
-            println("Here")
-
             db.collection("users").document(user_name)
                 .set(user)
                 .addOnSuccessListener {Toast.makeText(this, "test", Toast.LENGTH_SHORT).show() }
                 .addOnFailureListener {Toast.makeText(this, "test", Toast.LENGTH_SHORT).show() }
-
-
             val intent = Intent(this, HomePage:: class.java)
             startActivity(intent)
+            val username = findViewById<EditText>(R.id.username)
+            Singleton.username = username.toString()
             }
 
         }
