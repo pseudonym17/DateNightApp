@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SavedActivitiesPage"
-    android:background="#1C2D88">
+    android:background="#2B2C32"
+    tools:context=".SavedActivitiesPage">
 
     <ImageView
         android:id="@+id/logo"
