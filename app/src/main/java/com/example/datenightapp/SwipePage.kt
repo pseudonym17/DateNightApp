@@ -18,11 +18,6 @@ class SwipePage : AppCompatActivity() {
 
         val swipeImg = findViewById<ImageView>(R.id.swipeImg)
 
-        val title = findViewById<TextView>(R.id.activityTitle)
-        val description = findViewById<TextView>(R.id.activityDescription)
-        val location = findViewById<TextView>(R.id.location)
-        val price = findViewById<TextView>(R.id.price)
-
         val picasso = Picasso.get()
         val database = FirebaseFirestore.getInstance()
 
@@ -49,22 +44,6 @@ class SwipePage : AppCompatActivity() {
                 println("Error getting documents: ")
             }
 
-
-        val pictureFiles = arrayOf(
-            R.drawable.img,
-            R.drawable.rockclimbing,
-            R.drawable.ropes_course,
-            R.drawable.little_caesars,
-            R.drawable.hart_pool,
-            R.drawable.disc_golf,
-            R.drawable.rmountain,
-            R.drawable.apple_orchard,
-            R.drawable.sledding,
-            R.drawable.hickory,
-            R.drawable.rigby_lake
-        )
-
-//        swipeImg.setBackgroundResource(pictureFiles[index])
 
         swipeImg.setOnTouchListener(object : OnSwipeTouchListener(this@SwipePage) {
             override fun onSwipeRight() {
@@ -131,7 +110,7 @@ class SwipePage : AppCompatActivity() {
         description.setText(activitylist[index].description)
         location.setText(activitylist[index].address)
         price.setText(activitylist[index].price)
-        picasso.load(activitylist[0].image_url).into(img)
+        picasso.load(activitylist[index].image_url).into(img)
 
     }
 }
