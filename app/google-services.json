@@ -1,33 +1,63 @@
 {
   "project_info": {
+<<<<<<< HEAD
     "project_number": "729450249526",
     "project_id": "date-night-app-94e90",
     "storage_bucket": "date-night-app-94e90.appspot.com"
+=======
+    "project_number": "81600016521",
+    "project_id": "activities-296f9",
+    "storage_bucket": "activities-296f9.appspot.com"
+>>>>>>> 88d6153e23be29d3175d5a94d34565e6ca60e129
   },
   "client": [
     {
       "client_info": {
+<<<<<<< HEAD
         "mobilesdk_app_id": "1:729450249526:android:6f9de9454794b9b90bc797",
+=======
+        "mobilesdk_app_id": "1:81600016521:android:28d780b57cad0760c39658",
+>>>>>>> 88d6153e23be29d3175d5a94d34565e6ca60e129
         "android_client_info": {
           "package_name": "com.example.datenightapp"
         }
       },
       "oauth_client": [
         {
+<<<<<<< HEAD
           "client_id": "729450249526-fdvafcrhhc0t820j2remkt2qtdn9nlpg.apps.googleusercontent.com",
+=======
+          "client_id": "81600016521-hc7cb4vm2fvnq8rcce60nvvh4qld8f5v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.datenightapp",
+            "certificate_hash": "79baa112642fae755372bb0c7f3db663a9af8f46"
+          }
+        },
+        {
+          "client_id": "81600016521-b3697ges18i64i3v9mqmm4g83buhe035.apps.googleusercontent.com",
+>>>>>>> 88d6153e23be29d3175d5a94d34565e6ca60e129
           "client_type": 3
         }
       ],
       "api_key": [
         {
+<<<<<<< HEAD
           "current_key": "AIzaSyCFUM7tgROmAFiOBUs3dDXcaIug3Ms6vIk"
+=======
+          "current_key": "AIzaSyC9sEiqxtALnkF2YligCAu_50qv74aULqc"
+>>>>>>> 88d6153e23be29d3175d5a94d34565e6ca60e129
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
+<<<<<<< HEAD
               "client_id": "729450249526-fdvafcrhhc0t820j2remkt2qtdn9nlpg.apps.googleusercontent.com",
+=======
+              "client_id": "81600016521-b3697ges18i64i3v9mqmm4g83buhe035.apps.googleusercontent.com",
+>>>>>>> 88d6153e23be29d3175d5a94d34565e6ca60e129
               "client_type": 3
             }
           ]

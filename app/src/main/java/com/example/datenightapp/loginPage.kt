@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 
 class loginPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,10 +13,15 @@ class loginPage : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+        val user = findViewById<EditText>(R.id.username)
+
+        Singleton.username = user.toString()
+
         val button = findViewById<Button>(R.id.loginbtn)
 
-        button.setOnClickListener{
-            val intent = Intent(this, HomePage:: class.java)
+        button.setOnClickListener {
+//            write the firebase login function here
+            val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
     }
