@@ -28,21 +28,32 @@ class loginPage : AppCompatActivity() {
         button.setOnClickListener {
 //            write the firebase login function here
 
-            val user_name = findViewById<EditText>(R.id.username)
-            val password = findViewById<EditText>(R.id.password)
+            val user_name = findViewById<EditText>(R.id.username).getText().toString()
+            val password = findViewById<EditText>(R.id.password).getText().toString()
 
             db.collection("users")
                 .get()
                 .addOnSuccessListener { result ->
                     for (document in result) {
-                        Toast.makeText(this, "${document.id} => ${document.data["password"]}", Toast.LENGTH_SHORT).show()
+                        val dbUserName = document.id.toString()
+                        val dbPassword = document.data["password"].toString()
+                        if (user_name == dbUserName && password == dbPassword ) {
+                            val intent = Intent(this, HomePage::class.java)
+                            startActivity(intent)
+                        }
+                        else {
+                            findViewById<EditText>(R.id.username).text.clear()
+                            findViewById<EditText>(R.id.password).text.clear()
+
+                        }
+
+
                     }
                 }
                 .addOnFailureListener { exception ->
                     Log.w(TAG, "Error getting documents.", exception)
                 }
-            val intent = Intent(this, HomePage::class.java)
-            startActivity(intent)
+
         }
     }
 }
