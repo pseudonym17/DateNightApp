@@ -8,11 +8,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-<<<<<<< HEAD
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
-=======
->>>>>>> 88d6153e23be29d3175d5a94d34565e6ca60e129
 
 class loginPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

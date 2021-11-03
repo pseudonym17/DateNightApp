@@ -37,11 +37,6 @@ class SignUpPage : AppCompatActivity() {
             user["username"] = user_name
             user["password"] = password
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 88d6153e23be29d3175d5a94d34565e6ca60e129
             db.collection("users").document(user_name)
                 .set(user)
                 .addOnSuccessListener {Toast.makeText(this, "test", Toast.LENGTH_SHORT).show() }

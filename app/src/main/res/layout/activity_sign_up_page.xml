@@ -91,12 +91,8 @@
         android:backgroundTint="#0C133C"
         android:text="Sign-up"
         android:textSize="16sp"
-<<<<<<< HEAD
-=======
-        app:layout_constraintWidth="0.8"
         app:layout_constraintVertical_bias="0.7"
         app:layout_constraintBottom_toBottomOf="parent"
->>>>>>> 88d6153e23be29d3175d5a94d34565e6ca60e129
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
