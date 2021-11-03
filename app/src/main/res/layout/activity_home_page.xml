@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1C2D88"
+    android:background="#2B2C32"
     tools:context=".HomePage">
 
     <ImageView
@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#0C133C"
         android:text="Find An Activity"
+        app:iconPadding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -67,6 +68,7 @@
         android:layout_marginEnd="174dp"
         android:layout_marginBottom="127dp"
         android:text="Welcome,"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/home_to_swipe_button"
         app:layout_constraintEnd_toEndOf="parent"

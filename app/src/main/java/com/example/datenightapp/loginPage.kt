@@ -8,8 +8,11 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+<<<<<<< HEAD
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
+=======
+>>>>>>> 88d6153e23be29d3175d5a94d34565e6ca60e129
 
 class loginPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +20,10 @@ class loginPage : AppCompatActivity() {
         setContentView(R.layout.activity_login_page)
 
         supportActionBar?.hide()
+
+        val user = findViewById<EditText>(R.id.username)
+
+        Singleton.username = user.toString()
 
         val button = findViewById<Button>(R.id.loginbtn)
         val db = FirebaseFirestore.getInstance()

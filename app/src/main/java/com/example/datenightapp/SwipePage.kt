@@ -17,23 +17,24 @@ class SwipePage : AppCompatActivity() {
         supportActionBar?.hide()
 
         val swipeImg = findViewById<ImageView>(R.id.swipeImg)
+<<<<<<< HEAD
 
         val title = findViewById<TextView>(R.id.activityTitle)
         val description = findViewById<TextView>(R.id.activityDescription)
         val location = findViewById<TextView>(R.id.location)
         val price = findViewById<TextView>(R.id.price)
+=======
+>>>>>>> 88d6153e23be29d3175d5a94d34565e6ca60e129
 
         val picasso = Picasso.get()
         val database = FirebaseFirestore.getInstance()
 
-        //val activity : Activity(title, description, location, price)
         var activitylist : MutableList<Activity> = ArrayList()
         var indexCap = 0
         var index = 0
         database.collection("activities")
             .get()
             .addOnSuccessListener { documents ->
-                println("Starting to retrieve docs")
                 for (document in documents) {
 //                    println("${document.id} => ${document.data["name"]}")
                     val name = document.data["name"].toString()

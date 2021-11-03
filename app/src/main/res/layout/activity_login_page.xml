@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1C2D88"
+    android:background="#2B2C32"
     tools:context=".loginPage">
 
     <ImageView
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="204dp"
-        android:backgroundTint="#0C133C"
+        android:backgroundTint="#FFFFFF"
         android:hint="Username"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="280dp"
-        android:backgroundTint="#0C133C"
+        android:backgroundTint="#FBFBFB"
         android:hint="Password"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
