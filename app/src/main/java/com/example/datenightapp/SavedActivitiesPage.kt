@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SavedActivitiesPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,5 +25,25 @@ class SavedActivitiesPage : AppCompatActivity() {
             val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
+        val database = FirebaseFirestore.getInstance()
+        val user = Singleton.username
+        val title = findViewById<TextView>(R.id.titleText)
+        var savedids : MutableList<String?> = ArrayList()
+        database.collection("users").document("$user").collection("saved_activities")
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val docId = document.data["id"].toString()
+                    savedids.add(docId)
+                }
+                displayActivities(savedids)
+            }
+            .addOnFailureListener { exception ->
+                println("Error getting documents: ")
+            }
+
+    }
+    private fun displayActivities(savedids: MutableList<String?>) {
+
     }
 }

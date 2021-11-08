@@ -20,7 +20,7 @@ class loginPage : AppCompatActivity() {
 
         val user = findViewById<EditText>(R.id.username)
 
-        Singleton.username = user.toString()
+
 
         val button = findViewById<Button>(R.id.loginbtn)
         val db = FirebaseFirestore.getInstance()
@@ -38,6 +38,7 @@ class loginPage : AppCompatActivity() {
                         val dbUserName = document.id.toString()
                         val dbPassword = document.data["password"].toString()
                         if (user_name == dbUserName && password == dbPassword ) {
+                            Singleton.username = user_name
                             val intent = Intent(this, HomePage::class.java)
                             startActivity(intent)
                         }

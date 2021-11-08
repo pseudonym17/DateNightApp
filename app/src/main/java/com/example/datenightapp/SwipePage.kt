@@ -50,7 +50,7 @@ class SwipePage : AppCompatActivity() {
             override fun onSwipeRight() {
                 // Store the row at the current index into a table
                 //Add activity to saved list
-                addSavedActivity(index)
+                addSavedActivity(activitylist, index)
                 if (index < indexCap)
                     index++
                 else
@@ -98,12 +98,14 @@ class SwipePage : AppCompatActivity() {
         picasso.load(activitylist[index].image_url).into(img)
     }
 
-    private fun addSavedActivity(index: Int) {
+    private fun addSavedActivity(activitylist: MutableList<Activity>,index: Int) {
         val user = Singleton.username
         val db = FirebaseFirestore.getInstance()
-        val id = index + 1 // Change to get from list
-        //db.collection("users").document("caileyp").collection("saved_activities").add(id)
-        Toast.makeText(this, "ID Saved: $user", Toast.LENGTH_SHORT).show()
+        val id = activitylist[index].docId
+        val data = hashMapOf("id" to "$id")
+
+        db.collection("users").document("$user").collection("saved_activities").add(data)
+        //Toast.makeText(this, "ID Saved: $id", Toast.LENGTH_SHORT).show()
     }
 
 }
