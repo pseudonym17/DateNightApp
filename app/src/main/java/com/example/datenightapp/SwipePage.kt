@@ -22,19 +22,32 @@ class SwipePage : AppCompatActivity() {
         var activitylist : MutableList<Activity> = ArrayList()
         var indexCap = 0
         var index = 0
+
+        var user = Singleton.username
+        var savedIDs : MutableList<String?> = ArrayList()
+        database.collection("users").document("$user").collection("saved_activities")
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val docId = document.data["id"].toString()
+                    savedIDs.add(docId)
+                }
+            }
+            .addOnFailureListener { exception ->
+                println("Error getting saved activities")
+            }
+
         database.collection("activities")
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-//                    println("${document.id} => ${document.data["name"]}")
-                    //val id = document.id
-                    //Toast.makeText(this, "ID: $id", Toast.LENGTH_LONG).show()
+                    val docId = document.id
+                    // Here check to see if user has already saved activity
                     val name = document.data["name"].toString()
                     val description = document.data["description"].toString()
                     val address = document.data["address"].toString()
                     val price = document.data["price"].toString()
                     val image_url = document.data["image_url"].toString()
-                    val docId = document.id
                     val activity = Activity(name, description, address, price, image_url, docId)
                     activitylist.add(activity)
                     nextActivity(activitylist, 0)
