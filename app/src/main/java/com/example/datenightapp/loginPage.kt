@@ -25,6 +25,8 @@ class loginPage : AppCompatActivity() {
         val button = findViewById<Button>(R.id.loginbtn)
         val db = FirebaseFirestore.getInstance()
 
+
+
         button.setOnClickListener {
 //            write the firebase login function here
 
@@ -43,8 +45,13 @@ class loginPage : AppCompatActivity() {
                             startActivity(intent)
                         }
                         else {
-                            findViewById<EditText>(R.id.username).text.clear()
-                            findViewById<EditText>(R.id.password).text.clear()
+
+                            findViewById<EditText>(R.id.username).text.clear();
+                            findViewById<EditText>(R.id.password).text.clear();
+
+                            Toast.makeText(this,"Username or Password incorrect", Toast.LENGTH_SHORT).show();
+
+
 
                         }
 
