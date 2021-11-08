@@ -13,7 +13,6 @@ class SwipePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_swipe_page)
 
-
         supportActionBar?.hide()
 
         val swipeImg = findViewById<ImageView>(R.id.swipeImg)
@@ -29,14 +28,17 @@ class SwipePage : AppCompatActivity() {
             .addOnSuccessListener { documents ->
                 for (document in documents) {
 //                    println("${document.id} => ${document.data["name"]}")
+                    //val id = document.id
+                    //Toast.makeText(this, "ID: $id", Toast.LENGTH_LONG).show()
                     val name = document.data["name"].toString()
                     val description = document.data["description"].toString()
                     val address = document.data["address"].toString()
                     val price = document.data["price"].toString()
                     val image_url = document.data["image_url"].toString()
-                    val activity = Activity(name, description, address, price, image_url)
+                    val docId = document.id
+                    val activity = Activity(name, description, address, price, image_url, docId)
                     activitylist.add(activity)
-                    showFirstActivity(activitylist)
+                    nextActivity(activitylist, 0)
                 }
                 indexCap = activitylist.size - 2
             }
@@ -48,13 +50,13 @@ class SwipePage : AppCompatActivity() {
         swipeImg.setOnTouchListener(object : OnSwipeTouchListener(this@SwipePage) {
             override fun onSwipeRight() {
                 // Store the row at the current index into a table
-                Toast.makeText(this@SwipePage, "Saved Activity", Toast.LENGTH_SHORT)
-                    .show();
+                //Add activity to saved list
+
                 if (index < indexCap)
                     index++
                 else
                     index = 0
-//                swipeImg.setBackgroundResource(pictureFiles[index])
+
                 nextActivity(activitylist, index)
             }
 
@@ -65,10 +67,9 @@ class SwipePage : AppCompatActivity() {
                     index++
                 else
                     index = 0
-//                swipeImg.setBackgroundResource(pictureFiles[index])
+
                 nextActivity(activitylist, index)
             }
-
         })
 
         val button = findViewById<Button>(R.id.homeButton)
@@ -81,21 +82,6 @@ class SwipePage : AppCompatActivity() {
             val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
-    }
-    private fun showFirstActivity(activitylist : MutableList<Activity>) {
-        val picasso = Picasso.get()
-        val title = findViewById<TextView>(R.id.activityTitle)
-        val description = findViewById<TextView>(R.id.activityDescription)
-        val location = findViewById<TextView>(R.id.location)
-        val price = findViewById<TextView>(R.id.price)
-        val img = findViewById<ImageView>(R.id.swipeImg)
-
-        title.setText(activitylist[0].name)
-        description.setText(activitylist[0].description)
-        location.setText(activitylist[0].address)
-        price.setText(activitylist[0].price)
-        picasso.load(activitylist[0].image_url).into(img)
-
     }
 
     private fun nextActivity(activitylist: MutableList<Activity>, index: Int) {
@@ -111,6 +97,10 @@ class SwipePage : AppCompatActivity() {
         location.setText(activitylist[index].address)
         price.setText(activitylist[index].price)
         picasso.load(activitylist[index].image_url).into(img)
+    }
+
+    private fun addSavedActivity(username: String?, index: Int) {
 
     }
+
 }

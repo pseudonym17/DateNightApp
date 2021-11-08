@@ -5,6 +5,6 @@ data class Activity(
         val description: String? = null,
         val address: String? = null,
         val price: String? = null,
-        val image_url: String? = null
-
+        val image_url: String? = null,
+        val docId: String? = null
 )
