@@ -43,8 +43,13 @@ class SignUpPage : AppCompatActivity() {
                 .addOnFailureListener {Toast.makeText(this, "test", Toast.LENGTH_SHORT).show() }
             val intent = Intent(this, HomePage:: class.java)
             startActivity(intent)
+
+            val username = findViewById<EditText>(R.id.username).text.toString()
+            //Singleton.username = username.toString()
+
             val usern = findViewById<EditText>(R.id.username).text.toString()
             Singleton.username = usern
+
             }
         }
     }
