@@ -16,7 +16,6 @@ class SwipePage : AppCompatActivity() {
         supportActionBar?.hide()
 
         val swipeImg = findViewById<ImageView>(R.id.swipeImg)
-
         val database = FirebaseFirestore.getInstance()
 
         var activitylist : MutableList<Activity> = ArrayList()
