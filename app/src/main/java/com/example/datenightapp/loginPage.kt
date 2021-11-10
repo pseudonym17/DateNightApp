@@ -24,8 +24,10 @@ class loginPage : AppCompatActivity() {
         button.setOnClickListener {
 //            write the firebase login function here
 
-            val user_name = findViewById<EditText>(R.id.username).getText().toString()
-            val password = findViewById<EditText>(R.id.password).getText().toString()
+            var user_name = findViewById<EditText>(R.id.username).getText().toString()
+            var password = findViewById<EditText>(R.id.password).getText().toString()
+            user_name = user_name.replace("\\s".toRegex(),"");
+            password = password.replace("\\s".toRegex(),"");
 
             // This is checking to see if username and password are correct
             var isValidUser : Boolean = false
