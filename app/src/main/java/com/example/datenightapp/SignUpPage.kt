@@ -46,6 +46,5 @@ class SignUpPage : AppCompatActivity() {
             val usern = findViewById<EditText>(R.id.username).text.toString()
             Singleton.username = usern
             }
-
         }
     }
