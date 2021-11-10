@@ -26,6 +26,8 @@ class loginPage : AppCompatActivity() {
 
             var user_name = findViewById<EditText>(R.id.username).getText().toString()
             var password = findViewById<EditText>(R.id.password).getText().toString()
+
+            // Makes whitespace not effect authentication
             user_name = user_name.replace("\\s".toRegex(),"");
             password = password.replace("\\s".toRegex(),"");
 
@@ -37,6 +39,8 @@ class loginPage : AppCompatActivity() {
                     for (document in result) {
                         val dbUserName = document.id
                         val dbPassword = document.data["password"].toString()
+
+                        //If the password and username match, lets them in
                         if (user_name == dbUserName && password == dbPassword ) {
                             Singleton.username = user_name
                             isValidUser = true
@@ -45,6 +49,7 @@ class loginPage : AppCompatActivity() {
                             break
                         }
                     }
+                    // If not, clears text fields and gives error message
                     if (!isValidUser) {
                         findViewById<EditText>(R.id.username).text.clear();
                         findViewById<EditText>(R.id.password).text.clear();
