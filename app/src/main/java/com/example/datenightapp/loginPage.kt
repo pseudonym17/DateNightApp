@@ -27,6 +27,8 @@ class loginPage : AppCompatActivity() {
             val user_name = findViewById<EditText>(R.id.username).getText().toString()
             val password = findViewById<EditText>(R.id.password).getText().toString()
 
+            // This is checking to see if username and password are correct
+            var isValidUser : Boolean = false
             db.collection("users")
                 .get()
                 .addOnSuccessListener { result ->
@@ -35,21 +37,17 @@ class loginPage : AppCompatActivity() {
                         val dbPassword = document.data["password"].toString()
                         if (user_name == dbUserName && password == dbPassword ) {
                             Singleton.username = user_name
+                            isValidUser = true
                             val intent = Intent(this, HomePage::class.java)
                             startActivity(intent)
+                            break
                         }
-                        else {
-
-                            findViewById<EditText>(R.id.username).text.clear();
-                            findViewById<EditText>(R.id.password).text.clear();
-
-                            Toast.makeText(this,"Username or Password incorrect", Toast.LENGTH_SHORT).show();
-
-
-
-                        }
-
-
+                    }
+                    if (!isValidUser) {
+                        findViewById<EditText>(R.id.username).text.clear();
+                        findViewById<EditText>(R.id.password).text.clear();
+                        Toast.makeText(this, "Username or Password incorrect", Toast.LENGTH_SHORT)
+                            .show()
                     }
                 }
                 .addOnFailureListener { exception ->
