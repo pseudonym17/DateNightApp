@@ -20,19 +20,21 @@ class MatchesPage : AppCompatActivity() {
         val matchButton = findViewById<Button>(R.id.matchbtn)
         val database = FirebaseFirestore.getInstance()
         val user = Singleton.username
-        val other = findViewById<EditText>(R.id.editText).getText().toString()
 
         var myIDs : MutableList<String?> = ArrayList()
         var otherIDs : MutableList<String?> = ArrayList()
 
 //      Match button starts getting the matches from the database
         matchButton.setOnClickListener{
+            val other = findViewById<EditText>(R.id.editText).getText().toString()
 //          First the id's of my liked activites are saved into a list
+            println(other)
             database.collection("users").document("$user").collection("saved_activities")
                 .get()
                 .addOnSuccessListener { documents ->
                     for (document in documents) {
                         val docId = document.data["id"].toString()
+                        println(document)
                         myIDs.add(docId)
                     }
                 }
@@ -47,12 +49,12 @@ class MatchesPage : AppCompatActivity() {
                         val docId = document.data["id"].toString()
                         otherIDs.add(docId)
                     }
-
+                    println("test")
+                    match_ids(otherIDs, myIDs)
                 }
                 .addOnFailureListener { exception ->
                     println("Error getting documents: ")
                 }
-            match_ids(otherIDs, myIDs)
         }
 
 //      Home button sends you to homescreen
@@ -75,10 +77,13 @@ class MatchesPage : AppCompatActivity() {
                 if (id == otherid){
                     savedIDs.add(id)
                 }
-                createActivityList(savedIDs)
             }
         }
-    }
+        println(savedIDs)
+        val distinct = savedIDs.toSet().toMutableList()
+        println(distinct)
+        createActivityList(distinct)
+}
 
 //  Function that creates the list of activites based on the id's that are passed into it
     private fun createActivityList(savedIDs: MutableList<String?>) {
@@ -115,9 +120,10 @@ class MatchesPage : AppCompatActivity() {
 
 //  Function that displays the activities that are passed into it
     private fun displayActivities(activity: MutableList<Activity>) {
-        if (activity.size > 0) {
+    val layout = findViewById<LinearLayout>(R.id.layout)
+    layout.removeAllViews();
+    if (activity.size > 0) {
             for (av in activity) {
-                val layout = findViewById<LinearLayout>(R.id.layout)
 
                 // Add Title
                 val title = TextView(this)
