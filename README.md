@@ -1,18 +1,20 @@
 # DateNightApp
 # Overview
 
-This program will allow the user to swipe through activities to decide what to do for their date night.
+Datenight is an application that cures indecisiveness. It allows a user to swipe through activities.
+By swiping right, the activity is saved. The user then enters the username of their date and it gives you 
+all of the activities that you matched on.
 
 # Development Environment
 
 * Kotlin
 * Android Studio
-* 
+* Firestore
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 * [Kotlin and Androrid](developer.android.com/kotlin/)
 * [GitHub](http://www.github.com)
+* [Firestore Documentation](https://firebase.google.com/docs/guides)
 
-![Title Page](titleblue.png)
+
