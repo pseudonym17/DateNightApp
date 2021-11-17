@@ -13,20 +13,22 @@
         android:layout_height="108dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="cursive"
-        android:text="My Saved Activities"
-        android:textColor="@color/white"
-        android:textSize="34sp"
         android:layout_below="@id/logo"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/abril_fatface"
+        android:text="My Saved Activities"
+        android:paddingBottom="5dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp" />
 
     <Button
         android:id="@+id/homebtn"

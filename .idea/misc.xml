@@ -4,23 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Cailey/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_home_page.xml" value="0.264" />
-        <entry key="..\:/Users/Cailey/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_layout.xml" value="0.12335359675785208" />
         <entry key="..\:/Users/Cailey/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/Cailey/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_login_page.xml" value="0.1" />
         <entry key="..\:/Users/Cailey/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Cailey/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_matches_page.xml" value="0.2" />
+        <entry key="..\:/Users/Cailey/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_matches_page.xml" value="0.264" />
         <entry key="..\:/Users/Cailey/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_saved_activities_page.xml" value="0.12183383991894631" />
-        <entry key="..\:/Users/Cailey/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_sign_up_page.xml" value="0.2" />
-        <entry key="..\:/Users/Cailey/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_swipe_page.xml" value="0.2" />
+        <entry key="..\:/Users/Cailey/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_sign_up_page.xml" value="0.1" />
+        <entry key="..\:/Users/Cailey/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_swipe_page.xml" value="0.4" />
         <entry key="..\:/Users/ammon/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_home_page.xml" value="0.2" />
         <entry key="..\:/Users/ammon/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_login_page.xml" value="0.1" />
         <entry key="..\:/Users/ammon/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_matches_page.xml" value="0.2" />
         <entry key="..\:/Users/ammon/AndroidStudioProjects/DateNightApp/app/src/main/res/layout/activity_saved_activities_page.xml" value="0.2" />
         <entry key="..\:/Users/mabel/StudioProjects/DateNightAppDatabase/app/src/main/res/layout/activity_home_page.xml" value="0.1339918946301925" />
+        <entry key="..\:/Users/mabel/StudioProjects/DateNightAppDatabase/app/src/main/res/layout/activity_layout.xml" value="0.1339918946301925" />
         <entry key="..\:/Users/mabel/StudioProjects/DateNightAppDatabase/app/src/main/res/layout/activity_login.xml" value="0.1339918946301925" />
         <entry key="..\:/Users/mabel/StudioProjects/DateNightAppDatabase/app/src/main/res/layout/activity_login_page.xml" value="0.1339918946301925" />
         <entry key="..\:/Users/mabel/StudioProjects/DateNightAppDatabase/app/src/main/res/layout/activity_main.xml" value="0.1339918946301925" />
-        <entry key="..\:/Users/mabel/StudioProjects/DateNightAppDatabase/app/src/main/res/layout/activity_matches_page.xml" value="0.1339918946301925" />
+        <entry key="..\:/Users/mabel/StudioProjects/DateNightAppDatabase/app/src/main/res/layout/activity_matches_page.xml" value="0.165" />
         <entry key="..\:/Users/mabel/StudioProjects/DateNightAppDatabase/app/src/main/res/layout/activity_saved_activities_page.xml" value="0.1339918946301925" />
         <entry key="..\:/Users/mabel/StudioProjects/DateNightAppDatabase/app/src/main/res/layout/activity_swipe_page.xml" value="0.1339918946301925" />
         <entry key="..\:/Users/mabel/StudioProjects/DateNightAppFrontEnd/app/src/main/res/layout/activity_login.xml" value="0.1339918946301925" />
