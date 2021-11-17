@@ -9,10 +9,14 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
 
 class SavedActivitiesPage : AppCompatActivity() {
+    private lateinit var adapter: ActivityAdapter
+    private lateinit var activityRecyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_saved_activities_page)
@@ -50,7 +54,7 @@ class SavedActivitiesPage : AppCompatActivity() {
     private fun createActivityList(savedIDs: MutableList<String?>) {
         val database = FirebaseFirestore.getInstance()
 
-        var activityList : MutableList<Activity> = ArrayList()
+        var activityList : ArrayList<Activity> = ArrayList()
 
         database.collection("activities")
             .get()
@@ -78,35 +82,10 @@ class SavedActivitiesPage : AppCompatActivity() {
                 println("Error getting documents: ")
             }
     }
-    private fun displayActivities(activity: MutableList<Activity>) {
-        if (activity.size > 0) {
-            for (av in activity) {
-                val layout = findViewById<LinearLayout>(R.id.layout)
-
-                // Add Title
-                val title = TextView(this)
-                title.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT)
-                val color = resources.getColor(R.color.white)
-                title.setTextColor(color)
-                title.text = av.name
-                layout.addView(title)
-
-                // Add Image
-                val picasso = Picasso.get()
-                val image = ImageView(this)
-                image.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT, )
-                image.layoutParams.height = 200
-                image.layoutParams.width = 200
-
-                picasso.load(av.image_url).into(image)
-                layout.addView(image)
-
-                //description.setText(av.description)
-                //location.setText(av.address)
-                //price.setText(av.price)
-            }
-        }
+    private fun displayActivities(activityList: ArrayList<Activity>) {
+        adapter = ActivityAdapter(this, activityList)
+        activityRecyclerView = findViewById(R.id.activityRecyclerView)
+        activityRecyclerView.layoutManager = LinearLayoutManager(this)
+        activityRecyclerView.adapter = adapter
     }
 }
