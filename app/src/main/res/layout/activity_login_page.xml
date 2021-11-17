@@ -45,6 +45,7 @@
         android:layout_marginTop="280dp"
         android:backgroundTint="#FFFFFF"
         android:hint="Password"
+        android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
