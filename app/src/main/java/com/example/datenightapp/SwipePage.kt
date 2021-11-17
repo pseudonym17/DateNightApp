@@ -31,31 +31,41 @@ class SwipePage : AppCompatActivity() {
                     val docId = document.data["id"].toString()
                     savedIDs.add(docId)
                 }
+                database.collection("activities")
+                    .get()
+                    .addOnSuccessListener { documents ->
+                        for (document in documents) {
+                            val docId = document.id
+                            // Check to see if user has already saved activity
+                            var alreadySaved = false
+                            for (id in savedIDs) {
+                                if (id == docId) {
+                                    alreadySaved = true
+                                    break
+                                }
+                            }
+                            if (!alreadySaved) {
+                                val name = document.data["name"].toString()
+                                val description = document.data["description"].toString()
+                                val address = document.data["address"].toString()
+                                val price = document.data["price"].toString()
+                                val image_url = document.data["image_url"].toString()
+                                val activity = Activity(name, description, address, price, image_url, docId)
+                                activitylist.add(activity)
+                            }
+                        }
+                        nextActivity(activitylist, 0)
+                        indexCap = activitylist.size - 2
+                    }
+                    .addOnFailureListener { exception ->
+                        println("Error getting documents: ")
+                    }
             }
             .addOnFailureListener { exception ->
                 println("Error getting saved activities")
             }
 
-        database.collection("activities")
-            .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val docId = document.id
-                    // Here check to see if user has already saved activity
-                    val name = document.data["name"].toString()
-                    val description = document.data["description"].toString()
-                    val address = document.data["address"].toString()
-                    val price = document.data["price"].toString()
-                    val image_url = document.data["image_url"].toString()
-                    val activity = Activity(name, description, address, price, image_url, docId)
-                    activitylist.add(activity)
-                    nextActivity(activitylist, 0)
-                }
-                indexCap = activitylist.size - 2
-            }
-            .addOnFailureListener { exception ->
-                println("Error getting documents: ")
-            }
+
 
 
         swipeImg.setOnTouchListener(object : OnSwipeTouchListener(this@SwipePage) {
@@ -93,6 +103,10 @@ class SwipePage : AppCompatActivity() {
             val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun getActivities(savedIDs: MutableList<String?>) {
+
     }
 
     private fun nextActivity(activitylist: MutableList<Activity>, index: Int) {
