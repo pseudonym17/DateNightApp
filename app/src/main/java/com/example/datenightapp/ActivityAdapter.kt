@@ -21,6 +21,7 @@ class ActivityAdapter (val context: Context, val activityList: ArrayList<Activit
         override fun onBindViewHolder(holder: ActivityViewHolder, position: Int) {
             val currentActivity = activityList[position]
             holder.textName.text = currentActivity.name
+            holder.price.text = currentActivity.price
             val picasso = Picasso.get()
             picasso.load(currentActivity.image_url).into(holder.image)
         }
@@ -32,5 +33,6 @@ class ActivityAdapter (val context: Context, val activityList: ArrayList<Activit
         class ActivityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
             val textName = itemView.findViewById<TextView>(R.id.text_name)
             val image = itemView.findViewById<ImageView>(R.id.image)
+            val price = itemView.findViewById<TextView>(R.id.price)
         }
 }

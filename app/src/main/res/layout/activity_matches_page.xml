@@ -23,10 +23,10 @@
         android:layout_above="@id/homeButton"
         android:layout_below="@+id/matchbtn"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        tools:listitem="@layout/activity_layout"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        tools:listitem="@layout/activity_layout" />
 
     <Button
         android:id="@+id/homeButton"
@@ -43,12 +43,13 @@
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/abril_fatface"
         android:hint="Date's Username"
         android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/logo"/>
+        android:textColorHint="@color/white" />
 
     <Button
         android:id="@+id/matchbtn"
