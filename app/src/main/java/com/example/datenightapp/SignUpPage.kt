@@ -37,15 +37,38 @@ class SignUpPage : AppCompatActivity() {
             user["username"] = user_name
             user["password"] = password
 
-            db.collection("users").document(user_name)
-                .set(user)
-                .addOnSuccessListener {Toast.makeText(this, "test", Toast.LENGTH_SHORT).show() }
-                .addOnFailureListener {Toast.makeText(this, "test", Toast.LENGTH_SHORT).show() }
-            val intent = Intent(this, HomePage:: class.java)
-            startActivity(intent)
+            // This is checking to see if username and password are correct
+            var isValidUser : Boolean = false
+            db.collection("users")
+                .get()
+                .addOnSuccessListener { result ->
+                    for (document in result) {
+                        val dbUserName = document.id
 
-            val username = findViewById<EditText>(R.id.username).text.toString()
-            //Singleton.username = username.toString()
+                        //If the password and username match, lets them in
+                        if (user_name == dbUserName) {
+                            Toast.makeText(this, "Username already exists", Toast.LENGTH_SHORT).show()
+                        }
+                        else{
+                            db.collection("users").document(user_name)
+                            .set(user)
+                            .addOnSuccessListener {}
+                            .addOnFailureListener {Toast.makeText(this, "Connection Error", Toast.LENGTH_SHORT).show() }
+                        val intent = Intent(this, HomePage:: class.java)
+                        startActivity(intent)
+                        }
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.w(TAG, "Error getting documents.", exception)
+                }
+
+//            db.collection("users").document(user_name)
+//                .set(user)
+//                .addOnSuccessListener {}
+//                .addOnFailureListener {Toast.makeText(this, "Connection Error", Toast.LENGTH_SHORT).show() }
+//            val intent = Intent(this, HomePage:: class.java)
+//            startActivity(intent)
 
             val usern = findViewById<EditText>(R.id.username).text.toString()
             Singleton.username = usern
