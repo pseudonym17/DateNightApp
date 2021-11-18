@@ -32,12 +32,12 @@
         android:id="@+id/homeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#0C133C"
-        android:text="Home"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#0C133C"
         android:paddingTop="10dp"
-        android:paddingBottom="20dp"/>
+        android:paddingBottom="20dp"
+        android:text="Home" />
 
     <EditText
         android:id="@+id/editText"
