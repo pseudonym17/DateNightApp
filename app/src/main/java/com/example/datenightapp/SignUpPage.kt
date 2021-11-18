@@ -44,18 +44,12 @@ class SignUpPage : AppCompatActivity() {
                 .addOnSuccessListener { result ->
                     for (document in result) {
                         val dbUserName = document.id
-
-                        //If the password and username match, lets them in
                         if (user_name == dbUserName) {
-                            Toast.makeText(this, "Username already exists", Toast.LENGTH_SHORT).show()
-                        }
-                        else{
-                            db.collection("users").document(user_name)
-                            .set(user)
-                            .addOnSuccessListener {}
-                            .addOnFailureListener {Toast.makeText(this, "Connection Error", Toast.LENGTH_SHORT).show() }
-                        val intent = Intent(this, HomePage:: class.java)
-                        startActivity(intent)
+                            Toast.makeText(this, "Username already exists", Toast.LENGTH_SHORT)
+                                .show()
+                            break
+                        } else {
+                            isValidUser = true
                         }
                     }
                 }
@@ -63,12 +57,14 @@ class SignUpPage : AppCompatActivity() {
                     Log.w(TAG, "Error getting documents.", exception)
                 }
 
-//            db.collection("users").document(user_name)
-//                .set(user)
-//                .addOnSuccessListener {}
-//                .addOnFailureListener {Toast.makeText(this, "Connection Error", Toast.LENGTH_SHORT).show() }
-//            val intent = Intent(this, HomePage:: class.java)
-//            startActivity(intent)
+            if (isValidUser){
+                db.collection("users").document(user_name)
+                    .set(user)
+                    .addOnSuccessListener {}
+                    .addOnFailureListener {Toast.makeText(this, "Connection Error", Toast.LENGTH_SHORT).show() }
+                val intent = Intent(this, HomePage:: class.java)
+                startActivity(intent)
+            }
 
             val usern = findViewById<EditText>(R.id.username).text.toString()
             Singleton.username = usern
