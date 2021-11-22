@@ -44,6 +44,7 @@ class SwipePage : AppCompatActivity() {
                                     break
                                 }
                             }
+                            // If it isn't saved by user already, add to list
                             if (!alreadySaved) {
                                 val name = document.data["name"].toString()
                                 val description = document.data["description"].toString()
@@ -54,8 +55,10 @@ class SwipePage : AppCompatActivity() {
                                 activitylist.add(activity)
                             }
                         }
-                        nextActivity(activitylist, 0)
                         indexCap = activitylist.size - 2
+                        // Shuffle ActivityList
+                        activitylist.shuffle()
+                        nextActivity(activitylist, 0)
                     }
                     .addOnFailureListener { exception ->
                         println("Error getting documents: ")
@@ -65,14 +68,13 @@ class SwipePage : AppCompatActivity() {
                 println("Error getting saved activities")
             }
 
-
-
-
+        // What happens on activity swiping
         swipeImg.setOnTouchListener(object : OnSwipeTouchListener(this@SwipePage) {
+            // On swiping right, save activity, then go to next one
             override fun onSwipeRight() {
-                // Store the row at the current index into a table
                 //Add activity to saved list
                 addSavedActivity(activitylist, index)
+                // Increase index unless at end, then go back to 0
                 if (index < indexCap)
                     index++
                 else
@@ -81,14 +83,12 @@ class SwipePage : AppCompatActivity() {
                 nextActivity(activitylist, index)
             }
 
+            // On swipeleft increase the index, and go to next activity
             override fun onSwipeLeft() {
-                Toast.makeText(this@SwipePage, "Next Activity", Toast.LENGTH_SHORT)
-                    .show();
                 if (index < indexCap)
                     index++
                 else
                     index = 0
-
                 nextActivity(activitylist, index)
             }
         })
@@ -103,10 +103,6 @@ class SwipePage : AppCompatActivity() {
             val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
-    }
-
-    private fun getActivities(savedIDs: MutableList<String?>) {
-
     }
 
     private fun nextActivity(activitylist: MutableList<Activity>, index: Int) {
