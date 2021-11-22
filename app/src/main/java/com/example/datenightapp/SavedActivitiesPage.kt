@@ -5,12 +5,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
 
@@ -49,6 +47,23 @@ class SavedActivitiesPage : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 println("Error getting documents: ")
             }
+
+        // What happens on activity swiping
+        val db = database.collection("users").document("$user")
+        val clear = findViewById<Button>(R.id.clearbtn)
+        clear.setOnClickListener{
+            db.collection("saved_activities")
+                .get().addOnSuccessListener { documents ->
+                    for (doc in documents) {
+                        val docVal = doc.data["id"].toString()
+                        val docId = doc.id
+                        savedIDs.remove(docVal)
+                        db.collection("saved_activities")
+                            .document(docId).delete()
+                    }
+                    createActivityList(savedIDs)
+                }
+        }
 
     }
     private fun createActivityList(savedIDs: MutableList<String?>) {
