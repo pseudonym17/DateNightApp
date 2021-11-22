@@ -37,15 +37,34 @@ class SignUpPage : AppCompatActivity() {
             user["username"] = user_name
             user["password"] = password
 
-            db.collection("users").document(user_name)
-                .set(user)
-                .addOnSuccessListener {Toast.makeText(this, "test", Toast.LENGTH_SHORT).show() }
-                .addOnFailureListener {Toast.makeText(this, "test", Toast.LENGTH_SHORT).show() }
-            val intent = Intent(this, HomePage:: class.java)
-            startActivity(intent)
+            // This is checking to see if username and password are correct
+            var isValidUser : Boolean = false
+            db.collection("users")
+                .get()
+                .addOnSuccessListener { result ->
+                    for (document in result) {
+                        val dbUserName = document.id
+                        if (user_name == dbUserName) {
+                            Toast.makeText(this, "Username already exists", Toast.LENGTH_SHORT)
+                                .show()
+                            break
+                        } else {
+                            isValidUser = true
+                        }
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.w(TAG, "Error getting documents.", exception)
+                }
 
-            val username = findViewById<EditText>(R.id.username).text.toString()
-            //Singleton.username = username.toString()
+            if (isValidUser){
+                db.collection("users").document(user_name)
+                    .set(user)
+                    .addOnSuccessListener {}
+                    .addOnFailureListener {Toast.makeText(this, "Connection Error", Toast.LENGTH_SHORT).show() }
+                val intent = Intent(this, HomePage:: class.java)
+                startActivity(intent)
+            }
 
             val usern = findViewById<EditText>(R.id.username).text.toString()
             Singleton.username = usern
