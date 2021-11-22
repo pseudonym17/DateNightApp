@@ -20,7 +20,6 @@ class HomePage : AppCompatActivity() {
         val button3 = findViewById<Button>(R.id.matchbtn)
 
         val user = Singleton.username
-        Toast.makeText(this, "Welcome: $user", Toast.LENGTH_SHORT).show()
         val welcome = findViewById<TextView>(R.id.Welcome)
         welcome.text = ("${welcome.text}\n${user}")
 
