@@ -11,19 +11,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DateNightApp">
         <activity
-            android:name=".instructionPage"
+            android:name=".InstructionPage"
             android:exported="false" />
         <activity
             android:name=".SignUpPage"
             android:exported="true" />
         <activity
-            android:name=".loginPage"
+            android:name=".LoginPage"
             android:exported="true" />
         <activity
             android:name=".MatchesPage"
             android:exported="true" />
         <activity
-            android:name=".Login"
+            android:name=".LoginSignupPage"
             android:exported="true" />
         <activity
             android:name=".SavedActivitiesPage"
