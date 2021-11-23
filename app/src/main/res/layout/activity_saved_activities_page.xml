@@ -40,32 +40,23 @@
         android:layout_marginBottom="20dp"
         android:backgroundTint="#0C133C"
         android:text="Home" />
-<!--
-    <ScrollView
-        android:layout_width="342dp"
-        android:layout_height="339dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="1dp"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@+id/homebtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleText">
 
-        <LinearLayout
-            android:id="@+id/layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_vertical">
-        </LinearLayout>
+    <Button
+        android:id="@+id/clearbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/homebtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#0C133C"
+        android:text="Delete all saved activities" />
 
-    </ScrollView> -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/activityRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/homebtn"
+        android:layout_above="@id/clearbtn"
         android:layout_below="@+id/titleText"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
