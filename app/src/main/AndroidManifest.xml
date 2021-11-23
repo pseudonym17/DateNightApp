@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/logosqr"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
