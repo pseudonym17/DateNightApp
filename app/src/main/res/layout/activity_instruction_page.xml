@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2B2C32"
+    tools:context=".InstructionPage">
+
+    <ImageView
+        android:id="@+id/instructionimg"
+        android:layout_width="296dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046"
+        app:srcCompat="@drawable/instructionviewimage" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="378dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="116dp"
+        android:fontFamily="@font/abril_fatface"
+        android:text="If you swipe right, you can add an activity to your Saved Activities page.
+If you swipe left, the activity will be changed to
+a different activity."
+        android:textColor="#FFFFFF"
+        android:textSize="50px"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructionimg" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

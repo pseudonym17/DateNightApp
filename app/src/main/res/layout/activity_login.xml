@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2B2C32"
-    tools:context=".Login">
+    tools:context=".LoginSignupPage">
 
     <ImageView
         android:id="@+id/logo"
@@ -22,14 +22,11 @@
 
     <Button
         android:id="@+id/signupbtn"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
         android:backgroundTint="#0C133C"
-
-        android:text="Sign-Up"
-
-
+        android:text="Signup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +34,7 @@
 
     <Button
         android:id="@+id/loginbtn"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#0C133C"
         android:text="Login"
