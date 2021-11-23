@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 
-class Login : AppCompatActivity() {
+class LoginSignupPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -23,7 +23,7 @@ class Login : AppCompatActivity() {
         }
 
         button1.setOnClickListener{
-            val intent = Intent(this, loginPage::class.java)
+            val intent = Intent(this, LoginPage::class.java)
             startActivity(intent)
         }
 
