@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DateNightApp">
         <activity
+            android:name=".AddActivity"
+            android:exported="false" />
+        <activity
             android:name=".InstructionPage"
             android:exported="false" />
         <activity

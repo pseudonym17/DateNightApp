@@ -16,6 +16,7 @@ class LoginSignupPage : AppCompatActivity() {
         val logo = findViewById<ImageView>(R.id.logo)
         val button1 = findViewById<Button>(R.id.loginbtn)
         val button2 = findViewById<Button>(R.id.signupbtn)
+        //val logo = findViewById<ImageView>(R.id.)
 
         logo.setOnClickListener{
             val intent = Intent(this, HomePage::class.java)
