@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.046"
-        app:srcCompat="@drawable/instructionviewimage" />
+        app:srcCompat="@drawable/swipepic" />
 
     <TextView
         android:id="@+id/textView"
@@ -43,6 +43,7 @@ a different activity."
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Back"
+        android:textColor="@color/box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="10dp"

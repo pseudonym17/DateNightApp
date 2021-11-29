@@ -39,7 +39,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#0C133C"
-        android:text="Home" />
+        android:text="Home"
+        android:textColor="@color/box"/>
 
     <Button
         android:id="@+id/clearbtn"
@@ -50,7 +51,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#0C133C"
-        android:text="Delete all saved activities" />
+        android:text="Delete all saved activities"
+        android:textColor="@color/box"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/activityRecyclerView"
