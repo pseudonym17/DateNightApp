@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,70 +13,45 @@
         android:id="@+id/logo"
         android:layout_width="106dp"
         android:layout_height="108dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         app:srcCompat="@drawable/logo" />
-
-    <Button
-        android:id="@+id/homeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#0C133C"
-        android:text="Home"
-        android:textColor="@color/box"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price"
-        app:layout_constraintVertical_bias="0.428" />
 
     <ImageView
         android:id="@+id/swipeImg"
         android:layout_width="198dp"
         android:layout_height="197dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="50dp"
         android:background="@color/black"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
         tools:visibility="visible" />
 
     <TextView
         android:id="@+id/activityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/abril_fatface"
         android:text="Activity Title"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/swipeImg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/swipeImg"/>
 
     <TextView
         android:id="@+id/activityDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="236dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/abril_fatface"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Activity Description"
-        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activityTitle" />
+        android:layout_below="@id/activityTitle" />
 
     <TextView
         android:id="@+id/location"
@@ -85,12 +60,9 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/abril_fatface"
         android:text="Location"
-        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activityDescription" />
+        android:layout_below="@id/activityDescription" />
 
     <TextView
         android:id="@+id/price"
@@ -99,20 +71,16 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/abril_fatface"
         android:text="Price"
-        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/location" />
+        android:layout_below="@id/location" />
 
     <Button
         android:id="@+id/get_help"
         android:layout_width="63dp"
         android:layout_height="58dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="682dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/round_button"
         android:gravity="center_vertical|center_horizontal"
         android:text="?"
@@ -120,11 +88,17 @@
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/logo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_alignParentRight="true"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#0C133C"
+        android:text="Home"
+        android:textColor="@color/box"
+        android:layout_below="@id/price"/>
+
+</RelativeLayout>
