@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import com.google.firebase.firestore.FirebaseFirestore
 
 class HomePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +18,10 @@ class HomePage : AppCompatActivity() {
         val button1 = findViewById<Button>(R.id.home_to_swipe_button)
         val button2 = findViewById<Button>(R.id.home_to_saved)
         val button3 = findViewById<Button>(R.id.matchbtn)
+
+        val user = Singleton.username
+        val welcome = findViewById<TextView>(R.id.Welcome)
+        welcome.text = ("${welcome.text}\n${user}")
 
         button1.setOnClickListener{
             val intent = Intent(this, SwipePage::class.java)

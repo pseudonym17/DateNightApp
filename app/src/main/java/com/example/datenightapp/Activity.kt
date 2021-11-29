@@ -1,8 +1,10 @@
 package com.example.datenightapp
 
-data class Activity (
-    val title : String? = null,
-    val description : String? = null,
-    val price : String? = null,
-    val location : String? = null
+data class Activity(
+        val name: String? = null,
+        val description: String? = null,
+        val address: String? = null,
+        val price: String? = null,
+        val image_url: String? = null,
+        val docId: String? = null
 )

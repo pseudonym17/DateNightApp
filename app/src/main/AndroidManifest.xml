@@ -4,24 +4,26 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo"
-        android:label="@string/app_name"
         android:hardwareAccelerated="false"
+        android:icon="@drawable/logosqr"
+        android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.DateNightApp">
+        <activity
+            android:name=".InstructionPage"
+            android:exported="false" />
         <activity
             android:name=".SignUpPage"
             android:exported="true" />
         <activity
-            android:name=".loginPage"
+            android:name=".LoginPage"
             android:exported="true" />
         <activity
             android:name=".MatchesPage"
             android:exported="true" />
         <activity
-            android:name=".Login"
+            android:name=".LoginSignupPage"
             android:exported="true" />
         <activity
             android:name=".SavedActivitiesPage"
@@ -41,6 +43,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

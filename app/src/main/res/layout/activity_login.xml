@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1C2D88"
-    tools:context=".Login">
+    android:background="#2B2C32"
+    tools:context=".LoginSignupPage">
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="106dp"
         android:layout_height="108dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -21,14 +22,12 @@
 
     <Button
         android:id="@+id/signupbtn"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
         android:backgroundTint="#0C133C"
-
-        android:text="Sign-Up"
-
-
+        android:text="Signup"
+        android:textColor="@color/box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,10 +35,11 @@
 
     <Button
         android:id="@+id/loginbtn"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#0C133C"
         android:text="Login"
+        android:textColor="@color/box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
