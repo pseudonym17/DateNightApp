@@ -28,6 +28,7 @@
         android:layout_marginTop="32dp"
         android:backgroundTint="#0C133C"
         android:text="Home"
+        android:textColor="@color/box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

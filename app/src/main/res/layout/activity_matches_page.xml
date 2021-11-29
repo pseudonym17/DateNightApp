@@ -37,7 +37,8 @@
         android:backgroundTint="#0C133C"
         android:paddingTop="10dp"
         android:paddingBottom="20dp"
-        android:text="Home" />
+        android:text="Home"
+        android:textColor="@color/box"/>
 
     <EditText
         android:id="@+id/editText"
@@ -57,6 +58,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#0C133C"
         android:text="Find Our Activity Matches"
+        android:textColor="@color/box"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/editText"
         />
