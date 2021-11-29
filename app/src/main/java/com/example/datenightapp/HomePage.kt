@@ -23,6 +23,9 @@ class HomePage : AppCompatActivity() {
         val welcome = findViewById<TextView>(R.id.Welcome)
         welcome.text = ("${welcome.text}\n${user}")
 
+        // Add a button if the user is admin
+        //button1.hide()
+
         button1.setOnClickListener{
             val intent = Intent(this, SwipePage::class.java)
             startActivity(intent)
