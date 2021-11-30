@@ -18,25 +18,39 @@ class AddActivity : AppCompatActivity() {
         val db = FirebaseFirestore.getInstance()
         val addBtn = findViewById<Button>(R.id.addBtn)
         addBtn.setOnClickListener{
-            val title = findViewById<EditText>(R.id.title)
-            val description = findViewById<EditText>(R.id.description)
-            val address = findViewById<EditText>(R.id.address)
-            val price = findViewById<EditText>(R.id.price)
-            val url = findViewById<EditText>(R.id.url)
 
+            val title = findViewById<EditText>(R.id.title).getText().toString()
+            val description = findViewById<EditText>(R.id.description).getText().toString()
+            val address = findViewById<EditText>(R.id.address).getText().toString()
+            val price = findViewById<EditText>(R.id.price).getText().toString()
             // Here add an activity to the database
+            val db = FirebaseFirestore.getInstance()
             val activity: MutableMap<String, Any> = HashMap()
-            activity["name"] = title
+            activity["title"] = title
             activity["description"] = description
             activity["address"] = address
             activity["price"] = price
-            activity["image_url"] = url
 
-            // Needs document number
-            db.collection("activities").document()
+            var highest = 0
+            db.collection("activities").get()
+                .addOnSuccessListener { result ->
+
+                    for (document in result){
+//                        println(document.id)
+                        if (document.id.toInt() > highest){
+                             highest = document.id.toInt()
+                        }
+                    }
+//                    println("The highest is")
+//                    println(highest)
+                    highest += 1
+                }
+
+            db.collection("activities").document(highest.toString())
                 .set(activity)
-                .addOnSuccessListener { Toast.makeText(this, "Successfully Added Activity", Toast.LENGTH_SHORT).show() }
-                .addOnFailureListener { Toast.makeText(this, "Connection Error", Toast.LENGTH_SHORT).show() }
+                .addOnSuccessListener {}
+                .addOnFailureListener {Toast.makeText(this, "Connection Error", Toast.LENGTH_SHORT).show() }
+
         }
 
         val homeBtn = findViewById<Button>(R.id.homeBtn)

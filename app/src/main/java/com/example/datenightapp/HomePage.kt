@@ -66,5 +66,10 @@ class HomePage : AppCompatActivity() {
             val intent = Intent(this, MatchesPage::class.java)
             startActivity(intent)
         }
+
+        button4.setOnClickListener{
+            val intent = Intent(this, AddActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
