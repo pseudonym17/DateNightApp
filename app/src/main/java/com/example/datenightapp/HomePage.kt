@@ -18,13 +18,11 @@ class HomePage : AppCompatActivity() {
         val button1 = findViewById<Button>(R.id.home_to_swipe_button)
         val button2 = findViewById<Button>(R.id.home_to_saved)
         val button3 = findViewById<Button>(R.id.matchbtn)
+        val button4 = findViewById<Button>(R.id.add_act)
 
         val user = Singleton.username
         val welcome = findViewById<TextView>(R.id.Welcome)
         welcome.text = ("${welcome.text}\n${user}")
-
-        // Add a button if the user is admin
-        //button1.hide()
 
         button1.setOnClickListener{
             val intent = Intent(this, SwipePage::class.java)
@@ -38,6 +36,11 @@ class HomePage : AppCompatActivity() {
 
         button3.setOnClickListener{
             val intent = Intent(this, MatchesPage::class.java)
+            startActivity(intent)
+        }
+
+        button4.setOnClickListener{
+            val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
         }
     }
