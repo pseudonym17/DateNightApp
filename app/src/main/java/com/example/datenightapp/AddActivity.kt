@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 
-
 class AddActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,12 +15,14 @@ class AddActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+        val db = FirebaseFirestore.getInstance()
         val addBtn = findViewById<Button>(R.id.addBtn)
         addBtn.setOnClickListener{
             val title = findViewById<EditText>(R.id.title).getText().toString()
             val description = findViewById<EditText>(R.id.description).getText().toString()
             val address = findViewById<EditText>(R.id.address).getText().toString()
             val price = findViewById<EditText>(R.id.price).getText().toString()
+            val url = findViewById<EditText>(R.id.url)
             // Here add an activity to the database
             val db = FirebaseFirestore.getInstance()
             val activity: MutableMap<String, Any> = HashMap()
