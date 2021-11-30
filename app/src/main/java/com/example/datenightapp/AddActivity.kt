@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 
-
 class AddActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,8 +15,10 @@ class AddActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+        val db = FirebaseFirestore.getInstance()
         val addBtn = findViewById<Button>(R.id.addBtn)
         addBtn.setOnClickListener{
+
             val title = findViewById<EditText>(R.id.title).getText().toString()
             val description = findViewById<EditText>(R.id.description).getText().toString()
             val address = findViewById<EditText>(R.id.address).getText().toString()
@@ -49,6 +50,7 @@ class AddActivity : AppCompatActivity() {
                 .set(activity)
                 .addOnSuccessListener {}
                 .addOnFailureListener {Toast.makeText(this, "Connection Error", Toast.LENGTH_SHORT).show() }
+
         }
 
         val homeBtn = findViewById<Button>(R.id.homeBtn)
