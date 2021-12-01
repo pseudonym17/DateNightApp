@@ -26,17 +26,17 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="378dp"
-        android:layout_height="159dp"
+        android:layout_width="374dp"
+        android:layout_height="81dp"
+        android:layout_below="@id/instructionimg"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/abril_fatface"
         android:text="If you swipe right, you can add an activity to your Saved Activities page.
 If you swipe left, the activity will be changed to
 a different activity."
-        android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
-        android:textSize="50px"
-        android:layout_below="@id/instructionimg"/>
+        android:textSize="50px" />
 
     <Button
         android:id="@+id/backBtn"
