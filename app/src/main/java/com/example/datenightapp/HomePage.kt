@@ -67,9 +67,5 @@ class HomePage : AppCompatActivity() {
             startActivity(intent)
         }
 
-        button4.setOnClickListener{
-            val intent = Intent(this, AddActivity::class.java)
-            startActivity(intent)
-        }
     }
 }
