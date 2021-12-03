@@ -32,48 +32,52 @@
         android:id="@+id/activityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/swipeImg"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/abril_fatface"
         android:text="Activity Title"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/swipeImg"/>
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/activityDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/activityTitle"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/abril_fatface"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Activity Description"
-        android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"
-        android:layout_below="@id/activityTitle" />
+        android:textAlignment="center"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/activityDescription"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/abril_fatface"
         android:text="Location"
-        android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"
-        android:layout_below="@id/activityDescription" />
+        android:textAlignment="center"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/location"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/abril_fatface"
         android:text="Price"
-        android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"
-        android:layout_below="@id/location" />
+        android:textAlignment="center"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/get_help"
@@ -94,11 +98,11 @@
         android:id="@+id/homeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_below="@id/price"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#0C133C"
         android:text="Home"
-        android:textColor="@color/box"
-        android:layout_below="@id/price"/>
+        android:textColor="@color/box" />
 
 </RelativeLayout>
