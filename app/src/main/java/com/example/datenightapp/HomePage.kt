@@ -66,5 +66,6 @@ class HomePage : AppCompatActivity() {
             val intent = Intent(this, MatchesPage::class.java)
             startActivity(intent)
         }
+
     }
 }
