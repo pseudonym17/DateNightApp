@@ -31,14 +31,13 @@
     <Button
         android:id="@+id/homeButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="51dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="9dp"
         android:backgroundTint="#0C133C"
-        android:paddingTop="10dp"
-        android:paddingBottom="20dp"
         android:text="Home"
-        android:textColor="@color/box"/>
+        android:textColor="@color/box" />
 
     <EditText
         android:id="@+id/editText"
@@ -49,6 +48,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/abril_fatface"
         android:hint="Date's Username"
+        android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
