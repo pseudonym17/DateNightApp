@@ -12,6 +12,14 @@ Our purpose in creating Date Night is to help cure the common struggle of date p
 * Kotlin
 * XML
 
+# Collaborators
+
+* Brandon Densmore
+* Mabel Heiner
+* Cailey Marshall
+* Jared Vance
+* Ammon Wilson
+
 # Useful Websites
 
 * [Kotlin and Androrid](developer.android.com/kotlin/)
@@ -19,3 +27,8 @@ Our purpose in creating Date Night is to help cure the common struggle of date p
 * [Firestore Documentation](https://firebase.google.com/docs/guides)
 * [Tutorialspoint (swipe gestures)](https://www.tutorialspoint.com/how-to-handle-swipe-gestures-in-kotlin)
 
+# Future Work
+
+* We would like to expand to have activities for different areas.
+* We want to have seasonal activities which are shown based on the given date.
+* We would like the user to be able to adjust their saved activity list.
